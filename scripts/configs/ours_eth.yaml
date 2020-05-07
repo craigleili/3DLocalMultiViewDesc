@@ -1,0 +1,30 @@
+log:
+  identifier: "mvd"
+  root_path: "./log_eth"
+
+render:
+  augment_rotations: True
+  draw_color: False
+  draw_depth: True
+  trainable: True
+  view_num: 8
+  rotation_num: 0
+  default_radius: 0.1
+  dist_factor: 3.0
+
+model:
+  cnn_out_channels: 128
+  desc_dim: 32
+  fusion_type: "soft_pool"
+  type: "MVPoolNet"
+
+view_pool:
+  kernel: 3
+
+eval:
+  general:
+    ckpt_path: "./ours_3dmatch/net_{}_16.pth"
+  geomreg:
+    test:
+      name: "eth"
+      pcloud_root: "<ETH_Root>"
