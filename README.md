@@ -27,7 +27,7 @@ In this work, we propose an end-to-end framework to learn local multi-view descr
 
 - CUDA \& CUDNN
 
-- Python >= 3.6
+- Python 3.6 or 3.7
 
 - Install packages by
 ```
