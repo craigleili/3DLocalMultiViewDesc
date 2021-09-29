@@ -27,20 +27,20 @@ In this work, we propose an end-to-end framework to learn local multi-view descr
 
 - CUDA \& CUDNN
 
-- Python >= 3.6
+- Python 3.6 or 3.7
 
 - Install packages by
 ```
 pip install -r requirements.txt
 ```
 
-(Or if you are familiar with Docker, a ``Dockerfile`` is provided in folder ``docker`` for building a [Docker image](https://hub.docker.com/r/craigleili/3dlocalmultiviewdesc/tags?page=1&name=mvdesc) that includes a complete running environment.)
+If you are familiar with Docker, a ``Dockerfile`` is provided in folder ``docker`` for building a [Docker image](https://hub.docker.com/r/craigleili/3dlocalmultiviewdesc/tags?page=1&name=mvdesc) that includes a complete running environment.
 
 ### 3DMatch Benchmark
 
 #### Training
 
-Download the 3DMatch RGB-D data from [here](http://3dmatch.cs.princeton.edu/#rgbd-reconstruction-datasets).
+Download the 3DMatch RGB-D data via [this link](http://3dmatch.cs.princeton.edu/#rgbd-reconstruction-datasets).
 
 Go to folder ```data/preprocess```. Use the following scripts for preprocessing and generating training data.
 
@@ -58,31 +58,31 @@ A copy of the trained weights is located in ```scripts/ours_3dmatch```.
 
 #### Evaluation
 
-Download the 3DMatch geometric registration benchmark from [here](https://1drv.ms/u/s!Alg6Vpe53dEDgZIsbH8Vt_J2T1CCMQ?e=QMl1U0). If you use these data in your work, please consider citing [[1]](#references).
+Download the 3DMatch geometric registration benchmark via [this link](https://1drv.ms/u/s!Alg6Vpe53dEDgZIsbH8Vt_J2T1CCMQ?e=QMl1U0). If you use these data in your work, please consider citing [[1]](#references).
 
 Go to folder ```scripts```. Fill the paths in ```configs/ours_3dmatch.yaml``` and then extract the local multi-view descriptors by running
 ```
 python main_mvdesc.py test configs/ours_3dmatch.yaml
 ```
-(Or the extracted descriptors can be directly downloaded from [here](https://1drv.ms/u/s!Alg6Vpe53dEDgZIsbH8Vt_J2T1CCMQ?e=QMl1U0).)
+The extracted descriptors can also be directly downloaded via [this link](https://1drv.ms/u/s!Alg6Vpe53dEDgZIsbH8Vt_J2T1CCMQ?e=QMl1U0).
 
 Compute the recall metric by running ```evaluation/eval_geomreg_3dmatch.sh```.
 
 ### ETH Benchmark
 
-Download the ETH benchmark from [here](https://1drv.ms/u/s!Alg6Vpe53dEDgZIsbH8Vt_J2T1CCMQ?e=QMl1U0). If you use these data in your work, please consider citing [[2, 3]](#references).
+Download the ETH benchmark via [this link](https://1drv.ms/u/s!Alg6Vpe53dEDgZIsbH8Vt_J2T1CCMQ?e=QMl1U0). If you use these data in your work, please consider citing [[2, 3]](#references).
 
 Go to folder ```scripts```. Fill the paths in ```configs/ours_eth.yaml``` and then extract the local multi-view descriptors by running
 ```
 python main_mvdesc.py test configs/ours_eth.yaml
 ```
-(Or the extracted descriptors can be directly downloaded from [here](https://1drv.ms/u/s!Alg6Vpe53dEDgZIsbH8Vt_J2T1CCMQ?e=QMl1U0).)
+The extracted descriptors can also be directly downloaded via [this link](https://1drv.ms/u/s!Alg6Vpe53dEDgZIsbH8Vt_J2T1CCMQ?e=QMl1U0).
 
 Compute the recall metric by running ```evaluation/eval_geomreg_eth.sh```.
 
 ## References
 
 1. Zeng et al. [3DMatch: Learning Local Geometric Descriptors from RGB-D Reconstructions](http://3dmatch.cs.princeton.edu/). CVPR 2017.
-1. Pomerleau et al. [Challenging data sets for point cloud registration algorithms](https://projects.asl.ethz.ch/datasets/doku.php?id=laserregistration:laserregistration). IJRR, 2012.
+1. Pomerleau et al. [Challenging data sets for point cloud registration algorithms](https://projects.asl.ethz.ch/datasets/doku.php?id=laserregistration:laserregistration). IJRR 2012.
 1. Gojcic et al. [The Perfect Match: 3D Point Cloud Matching with Smoothed Densities](https://github.com/zgojcic/3DSmoothNet). CVPR 2019.
 1. Liu et al. [Soft Rasterizer: A differentiable renderer for image-based 3d reasoning](https://github.com/ShichenLiu/SoftRas). ICCV 2019.
